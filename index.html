@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>hell world</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="100" height="100"></canvas>
+		<canvas id='car' width="50" height="50"></canvas>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			onitview('马','black');
+			drawcar('车','orangered');
+		}
+		function onitview(text,color){
+		var c=document.getElementById("myCanvas");
+		var cxt=c.getContext("2d");
+		cxt.fillStyle = 'palegoldenrod'
+		cxt.fillRect(0,0,100,100);
+		cxt.moveTo(0,50);
+		cxt.lineTo(100,50);
+		cxt.moveTo(50,0);
+		cxt.lineTo(50,100);
+		cxt.stroke();
+		
+		cxt.beginPath();
+		cxt.arc(50,50,25,0,Math.PI*2,true);
+		cxt.fillStyle = '#E8C58F';
+		cxt.fill();
+		cxt.strokeStyle = '#D1BDA9';
+		cxt.stroke();
+
+	 	cxt.font = "normal normal bold 30px Arial";    
+    	cxt.fillStyle = color;
+  	    cxt.fillText(text ,35, 60);
+		}
+		
+		function drawcar(text,color){
+			var a = document.getElementById('car');
+			var cxt = a.getContext("2d");
+			cxt.beginPath();
+		cxt.arc(25,25,25,0,Math.PI*2,true);
+		cxt.fillStyle = '#E8C58F';		
+		cxt.fill();
+		cxt.strokeStyle = '#D1BDA9';
+		cxt.stroke();
+
+	 	cxt.font = "normal normal bold 30px Arial";    
+    	cxt.fillStyle = color;
+  	    cxt.fillText(text ,10, 35);
+			
+		}
+	    
+	</script>
+</html>
